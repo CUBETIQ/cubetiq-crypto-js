@@ -3,7 +3,7 @@
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "sourceMap": false,
+        "sourceMap": true,
         "outDir": "dist",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -11,6 +11,7 @@
         "lib": ["ES2015"],
         "skipLibCheck": true,
         "experimentalDecorators": true,
+        "declaration": true,
         "paths": {
             "@/*": ["./*"]
         }
