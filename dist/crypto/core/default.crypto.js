@@ -43,7 +43,11 @@ var __importStar =
         return result
     }
 Object.defineProperty(exports, "__esModule", { value: true })
-exports.decrypt = exports.encrypt = void 0
+exports.cryptoRandomString =
+    exports.cryptoRandomBytes =
+    exports.decrypt =
+    exports.encrypt =
+        void 0
 var crypto = __importStar(require("crypto"))
 var config_1 = require("../../config")
 var util_1 = require("../../util")
@@ -79,4 +83,12 @@ var decrypt = function (data, key, iv) {
     return decrypted
 }
 exports.decrypt = decrypt
+var cryptoRandomBytes = function (length) {
+    return Buffer.from(crypto.randomBytes(length))
+}
+exports.cryptoRandomBytes = cryptoRandomBytes
+var cryptoRandomString = function (length) {
+    return cryptoRandomBytes(length).toString(config_1.DEFAULT_BUFFER_TYPE)
+}
+exports.cryptoRandomString = cryptoRandomString
 //# sourceMappingURL=default.crypto.js.map

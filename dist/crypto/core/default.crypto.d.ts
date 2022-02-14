@@ -9,4 +9,6 @@ declare const decrypt: (
     key: string | Buffer,
     iv?: string | Buffer | null | undefined
 ) => string
-export { encrypt, decrypt }
+declare const cryptoRandomBytes: (length: number) => Buffer
+declare const cryptoRandomString: (length: number) => string
+export { encrypt, decrypt, cryptoRandomBytes, cryptoRandomString }
