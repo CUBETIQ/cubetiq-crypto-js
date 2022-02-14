@@ -7,8 +7,8 @@ import {
 // DefaultCryptoProvider
 const key = "67rKmuc6DiDukE0jsUP421Eizo4CreaL6Q7Pg/NmH/s="
 const iv = "FEFM9AY2m5jDq6GZ+CfLIA=="
-const keyJsonFileValuesDefault = "./dummy/ase-256.json"
-const keyJsonFileKeysDefault = "./dummy/ase-256.keys.json"
+const keyJsonFileValuesDefault = "./dummy/aes-256.json"
+const keyJsonFileKeysDefault = "./dummy/aes-256.keys.json"
 
 // E2ECryptoProvider
 const PRIVATE_KEY_VALUE =
@@ -34,6 +34,22 @@ test("test: Default Encryption From Values", () => {
     const encrypted = provider.encrypt(TEXT)
     const decrypted = provider.decrypt(encrypted)
     expect(decrypted).toBe(TEXT)
+})
+
+test("test: Default Encryption with Hello World", () => {
+    const data = "Hello World"
+    const provider = CryptoProvider.newInstance(
+        new DefaultCryptoProvider({
+            key: key,
+            iv: iv,
+        })
+    )
+
+    const encrypted = provider.encrypt(data)
+    const decrypted = provider.decrypt(encrypted)
+    const decrypted2 = provider.decrypt("6Rkfueq+fT3vPgWTST1lXg==")
+    expect(decrypted).toBe(data)
+    expect(decrypted2).toBe(data)
 })
 
 test("test: Default Encryption From JsonFile Values", () => {

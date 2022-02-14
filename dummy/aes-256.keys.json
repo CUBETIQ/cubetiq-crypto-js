@@ -1,0 +1,4 @@
+{
+    "keyPath": "./dummy/aes-256-32.key",
+    "ivPath": "./dummy/aes-256-16.key"
+}
