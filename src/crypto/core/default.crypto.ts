@@ -46,4 +46,12 @@ const decrypt = (
     return decrypted
 }
 
-export { encrypt, decrypt }
+const cryptoRandomBytes = (length: number): Buffer => {
+    return Buffer.from(crypto.randomBytes(length))
+}
+
+const cryptoRandomString = (length: number): string => {
+    return cryptoRandomBytes(length).toString(DEFAULT_BUFFER_TYPE)
+}
+
+export { encrypt, decrypt, cryptoRandomBytes, cryptoRandomString }
