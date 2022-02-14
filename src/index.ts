@@ -1,1 +1,1 @@
-console.log('Welcome to TS Project!');
+export {}

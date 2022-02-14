@@ -1,14 +1,15 @@
-# TS Project (Template for TypeScript)
+# CUBETIQ CryptoJS
 
-[![Build Status](https://dci.osa.cubetiqs.com/api/badges/CUBETIQ/ts-project/status.svg)](https://dci.osa.cubetiqs.com/CUBETIQ/ts-project)
+-   Default Encryption
+-   E2E Encryption
 
-- TypeScript
-- TS Node Dev
-- Husky
-- Prettier
-- ESLint
+### Generate for Default Encryption
 
-...
+```js
+const key = crypto.randomBytes(32)
+const iv = crypto.randomBytes(16)
+```
 
 ### Contributors
-- Sambo Chea <sombochea@cubetiqs.com>
+
+-   Sambo Chea <sombochea@cubetiqs.com>

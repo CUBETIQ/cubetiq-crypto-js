@@ -1,7 +1,7 @@
 {
-    "name": "@cubetiq/ts-project",
+    "name": "@cubetiq/cryptojs",
     "version": "1.0.0",
-    "description": "TS project template",
+    "description": "A basic cryptojs for cubetiq application data encryption and protection.",
     "main": "dist/index.js",
     "scripts": {
         "start": "ts-node-dev --respawn --transpile-only src/index.ts",
@@ -12,11 +12,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://git.cubetiqs.com/CUBETIQ/ts-project.git"
+        "url": "https://git.cubetiqs.com/CUBETIQ/cubetiq-cryptojs.git"
     },
     "keywords": [
         "TypeScript",
-        "Nodejs"
+        "Nodejs",
+        "Crypto",
+        "Encryption"
     ],
     "author": "Sambo Chea <sombochea@cubetiqs.com>",
     "license": "ISC",
