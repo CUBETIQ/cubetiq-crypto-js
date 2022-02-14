@@ -1,6 +1,2 @@
-import {
-    CryptoProvider,
-    DefaultCryptoProvider,
-    E2ECryptoProvider,
-} from "./crypto"
-export { CryptoProvider, DefaultCryptoProvider, E2ECryptoProvider }
+import { Crypto, DefaultCryptoProvider, E2ECryptoProvider } from "./crypto"
+export { Crypto, DefaultCryptoProvider, E2ECryptoProvider }

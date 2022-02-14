@@ -1,6 +1,6 @@
 "use strict"
 Object.defineProperty(exports, "__esModule", { value: true })
-exports.CryptoProvider =
+exports.Crypto =
     exports.E2ECryptoProvider =
     exports.DefaultCryptoProvider =
     exports.e2eDecrypt =
@@ -35,10 +35,10 @@ Object.defineProperty(exports, "e2eDecrypt", {
     },
 })
 var crypto_1 = require("./crypto")
-Object.defineProperty(exports, "CryptoProvider", {
+Object.defineProperty(exports, "Crypto", {
     enumerable: true,
     get: function () {
-        return crypto_1.CryptoProvider
+        return crypto_1.Crypto
     },
 })
 var default_provider_1 = require("./provider/default.provider")

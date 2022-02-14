@@ -5,7 +5,7 @@ import {
     readFileToJson,
     readFileToString,
 } from "../../util"
-import { ICryptoProvider } from "../provider.crypto"
+import { CryptoProvider } from "../provider.crypto"
 
 interface E2ECryptoProviderOptions {
     privateKey?: string | Buffer | null | undefined
@@ -15,7 +15,7 @@ interface E2ECryptoProviderOptions {
     jsonPath?: string | null | undefined
 }
 
-export class E2ECryptoProvider implements ICryptoProvider {
+export class E2ECryptoProvider implements CryptoProvider {
     private privateKey: string | Buffer | null | undefined
     private publicKey: string | Buffer | null | undefined
 

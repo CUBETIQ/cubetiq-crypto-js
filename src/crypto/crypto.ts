@@ -1,7 +1,7 @@
-import { ICryptoProvider } from "./provider.crypto"
+import { CryptoProvider } from "./provider.crypto"
 
-export class CryptoProvider {
-    constructor(private readonly provider: ICryptoProvider) {}
+export class Crypto {
+    constructor(private readonly provider: CryptoProvider) {}
 
     public encrypt(data: string | Buffer): string {
         return this.provider.encrypt(data)
@@ -11,11 +11,11 @@ export class CryptoProvider {
         return this.provider.decrypt(data)
     }
 
-    private static _instance: CryptoProvider | null | undefined
-    public static newInstance(provider: ICryptoProvider): CryptoProvider {
-        if (!CryptoProvider._instance) {
-            CryptoProvider._instance = new CryptoProvider(provider)
+    private static _instance: Crypto | null | undefined
+    public static newInstance(provider: CryptoProvider): Crypto {
+        if (!Crypto._instance) {
+            Crypto._instance = new Crypto(provider)
         }
-        return CryptoProvider._instance
+        return Crypto._instance
     }
 }

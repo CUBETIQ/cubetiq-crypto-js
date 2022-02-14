@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { ICryptoProvider } from "../provider.crypto"
+import { CryptoProvider } from "../provider.crypto"
 interface E2ECryptoProviderOptions {
     privateKey?: string | Buffer | null | undefined
     publicKey?: string | Buffer | null | undefined
@@ -7,7 +7,7 @@ interface E2ECryptoProviderOptions {
     publicKeyPath?: string | null | undefined
     jsonPath?: string | null | undefined
 }
-export declare class E2ECryptoProvider implements ICryptoProvider {
+export declare class E2ECryptoProvider implements CryptoProvider {
     private privateKey
     private publicKey
     constructor(options: E2ECryptoProviderOptions)

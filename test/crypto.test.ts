@@ -1,8 +1,4 @@
-import {
-    CryptoProvider,
-    DefaultCryptoProvider,
-    E2ECryptoProvider,
-} from "../src"
+import { Crypto, DefaultCryptoProvider, E2ECryptoProvider } from "../src"
 
 // DefaultCryptoProvider
 const key = "67rKmuc6DiDukE0jsUP421Eizo4CreaL6Q7Pg/NmH/s="
@@ -24,7 +20,7 @@ const publicKeyPath = "./dummy/public-key.pem"
 const TEXT = `Hello World and Then...!`
 
 test("test: Default Encryption From Values", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new DefaultCryptoProvider({
             key: key,
             iv: iv,
@@ -38,7 +34,7 @@ test("test: Default Encryption From Values", () => {
 
 test("test: Default Encryption with Hello World", () => {
     const data = "Hello World"
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new DefaultCryptoProvider({
             key: key,
             iv: iv,
@@ -53,7 +49,7 @@ test("test: Default Encryption with Hello World", () => {
 })
 
 test("test: Default Encryption From JsonFile Values", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new DefaultCryptoProvider({
             keyiVPath: keyJsonFileValuesDefault,
         })
@@ -65,7 +61,7 @@ test("test: Default Encryption From JsonFile Values", () => {
 })
 
 test("test: Default Encryption From JsonFile Keys Path", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new DefaultCryptoProvider({
             jsonPath: keyJsonFileKeysDefault,
         })
@@ -77,7 +73,7 @@ test("test: Default Encryption From JsonFile Keys Path", () => {
 })
 
 test("test: E2E Encryption From Values", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new E2ECryptoProvider({
             publicKey: PUBLIC_KEY_VALUE,
             privateKey: PRIVATE_KEY_VALUE,
@@ -90,7 +86,7 @@ test("test: E2E Encryption From Values", () => {
 })
 
 test("test: E2E Encryption From Files Values", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new E2ECryptoProvider({
             privateKeyPath: privateKeyPath,
             publicKeyPath: publicKeyPath,
@@ -103,7 +99,7 @@ test("test: E2E Encryption From Files Values", () => {
 })
 
 test("test: E2E Encryption From JsonFile Values", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new E2ECryptoProvider({
             jsonPath: privatePublicJsonFileValuesDefault,
         })
@@ -115,7 +111,7 @@ test("test: E2E Encryption From JsonFile Values", () => {
 })
 
 test("test: E2E Encryption From JsonFile Keys Path", () => {
-    const provider = CryptoProvider.newInstance(
+    const provider = Crypto.newInstance(
         new E2ECryptoProvider({
             jsonPath: privatePublicJsonFileKeysDefault,
         })

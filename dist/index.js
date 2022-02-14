@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true })
 exports.E2ECryptoProvider =
     exports.DefaultCryptoProvider =
-    exports.CryptoProvider =
+    exports.Crypto =
         void 0
 var crypto_1 = require("./crypto")
-Object.defineProperty(exports, "CryptoProvider", {
+Object.defineProperty(exports, "Crypto", {
     enumerable: true,
     get: function () {
-        return crypto_1.CryptoProvider
+        return crypto_1.Crypto
     },
 })
 Object.defineProperty(exports, "DefaultCryptoProvider", {

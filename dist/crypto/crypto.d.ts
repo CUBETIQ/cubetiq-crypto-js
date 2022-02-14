@@ -1,10 +1,10 @@
 /// <reference types="node" />
-import { ICryptoProvider } from "./provider.crypto"
-export declare class CryptoProvider {
+import { CryptoProvider } from "./provider.crypto"
+export declare class Crypto {
     private readonly provider
-    constructor(provider: ICryptoProvider)
+    constructor(provider: CryptoProvider)
     encrypt(data: string | Buffer): string
     decrypt(data: string): string
     private static _instance
-    static newInstance(provider: ICryptoProvider): CryptoProvider
+    static newInstance(provider: CryptoProvider): Crypto
 }

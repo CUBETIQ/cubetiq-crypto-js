@@ -1,23 +1,23 @@
 "use strict"
 Object.defineProperty(exports, "__esModule", { value: true })
-exports.CryptoProvider = void 0
-var CryptoProvider = /** @class */ (function () {
-    function CryptoProvider(provider) {
+exports.Crypto = void 0
+var Crypto = /** @class */ (function () {
+    function Crypto(provider) {
         this.provider = provider
     }
-    CryptoProvider.prototype.encrypt = function (data) {
+    Crypto.prototype.encrypt = function (data) {
         return this.provider.encrypt(data)
     }
-    CryptoProvider.prototype.decrypt = function (data) {
+    Crypto.prototype.decrypt = function (data) {
         return this.provider.decrypt(data)
     }
-    CryptoProvider.newInstance = function (provider) {
-        if (!CryptoProvider._instance) {
-            CryptoProvider._instance = new CryptoProvider(provider)
+    Crypto.newInstance = function (provider) {
+        if (!Crypto._instance) {
+            Crypto._instance = new Crypto(provider)
         }
-        return CryptoProvider._instance
+        return Crypto._instance
     }
-    return CryptoProvider
+    return Crypto
 })()
-exports.CryptoProvider = CryptoProvider
+exports.Crypto = Crypto
 //# sourceMappingURL=crypto.js.map

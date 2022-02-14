@@ -3,7 +3,7 @@ import {
     readFileToJson,
     readFileToString,
 } from "../../util"
-import { ICryptoProvider } from "../provider.crypto"
+import { CryptoProvider } from "../provider.crypto"
 import { decrypt as dec, encrypt as enc } from "./../core/default.crypto"
 
 interface DefaultCryptoProviderOptions {
@@ -13,7 +13,7 @@ interface DefaultCryptoProviderOptions {
     jsonPath?: string | null | undefined
 }
 
-export class DefaultCryptoProvider implements ICryptoProvider {
+export class DefaultCryptoProvider implements CryptoProvider {
     private _key: string | Buffer | null | undefined
     private _iv: string | Buffer | null | undefined
 
