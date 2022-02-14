@@ -1,0 +1,4 @@
+{
+    "privateKeyPath": "./dummy/private-key.pem",
+    "publicKeyPath": "./dummy/public-key.pem"
+}
