@@ -2,21 +2,32 @@ import { e2eDecrypt, e2eEncrypt } from ".."
 import {
     assertNotNullOrUndefined,
     isNullOrUndefinedOrEmpty,
+    readFileToJson,
     readFileToString,
 } from "../../util"
 import { ICryptoProvider } from "../provider.crypto"
+
+interface E2ECryptoProviderOptions {
+    privateKey?: string | Buffer | null | undefined
+    publicKey?: string | Buffer | null | undefined
+    privateKeyPath?: string | null | undefined
+    publicKeyPath?: string | null | undefined
+    jsonPath?: string | null | undefined
+}
 
 export class E2ECryptoProvider implements ICryptoProvider {
     private privateKey: string | Buffer | null | undefined
     private publicKey: string | Buffer | null | undefined
 
-    constructor(
-        privateKey?: string | Buffer | null | undefined,
-        publicKey?: string | Buffer | null | undefined,
-        privateKeyPath?: string | null | undefined,
-        publicKeyPath?: string | null | undefined,
-        jsonPath?: string | null | undefined
-    ) {
+    constructor(options: E2ECryptoProviderOptions) {
+        const {
+            privateKey,
+            publicKey,
+            privateKeyPath,
+            publicKeyPath,
+            jsonPath,
+        } = options
+
         let isPrivateKeyInitialized = false
         let isPublicKeyInitialized = false
         if (privateKeyPath) {
@@ -30,7 +41,7 @@ export class E2ECryptoProvider implements ICryptoProvider {
         }
 
         if (!isPrivateKeyInitialized && !isPublicKeyInitialized && jsonPath) {
-            const json = require(jsonPath)
+            const json = readFileToJson(jsonPath)
             if (json.privateKey) {
                 this.privateKey = json.privateKey
                 isPrivateKeyInitialized = !isNullOrUndefinedOrEmpty(
