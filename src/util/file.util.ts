@@ -12,3 +12,17 @@ export const readFileToStringDefaultEncoding = (
 export const readFileToJson = (relativeFilePath: string): any => {
     return JSON.parse(readFileToStringDefaultEncoding(relativeFilePath))
 }
+
+export const writeFileFromString = (
+    relativeFilePath: string,
+    content: string
+): void => {
+    const baseDir = path.dirname(relativeFilePath)
+    const absolutePath = path.resolve(relativeFilePath)
+
+    if (!fs.existsSync(baseDir)) {
+        fs.mkdirSync(baseDir, { recursive: true })
+    }
+
+    fs.writeFileSync(absolutePath, content)
+}
