@@ -43,7 +43,10 @@ var __importStar =
         return result
     }
 Object.defineProperty(exports, "__esModule", { value: true })
-exports.readFileToJson = exports.readFileToStringDefaultEncoding = void 0
+exports.writeFileFromString =
+    exports.readFileToJson =
+    exports.readFileToStringDefaultEncoding =
+        void 0
 var fs = __importStar(require("fs"))
 var path = __importStar(require("path"))
 var config_1 = require("../config")
@@ -58,4 +61,13 @@ var readFileToJson = function (relativeFilePath) {
     )
 }
 exports.readFileToJson = readFileToJson
+var writeFileFromString = function (relativeFilePath, content) {
+    var baseDir = path.dirname(relativeFilePath)
+    var absolutePath = path.resolve(relativeFilePath)
+    if (!fs.existsSync(baseDir)) {
+        fs.mkdirSync(baseDir, { recursive: true })
+    }
+    fs.writeFileSync(absolutePath, content)
+}
+exports.writeFileFromString = writeFileFromString
 //# sourceMappingURL=file.util.js.map
