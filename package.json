@@ -23,7 +23,7 @@
     "author": "Sambo Chea <sombochea@cubetiqs.com>",
     "license": "ISC",
     "devDependencies": {
-        "@types/jest": "^29.4.0",
+        "@types/jest": "^29.4.1",
         "@types/node": "^18.15.2",
         "@typescript-eslint/eslint-plugin": "^5.54.1",
         "@typescript-eslint/parser": "^5.55.0",
