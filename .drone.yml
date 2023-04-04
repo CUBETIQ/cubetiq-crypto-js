@@ -1,10 +1,9 @@
 kind: pipeline
-type: kubernetes
 name: ci
 steps:
     - name: build
       image: node
       commands:
-          - npm config set registry https://r.ctdn.net
+          - npm config set registry https://cjs.ctdn.net
           - npm install
           - npm run build
