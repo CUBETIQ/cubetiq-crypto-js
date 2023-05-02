@@ -1,9 +1,9 @@
 kind: pipeline
 name: ci
+
 steps:
     - name: build
       image: node
       commands:
-          - npm config set registry https://cjs.ctdn.net
           - npm install
           - npm run build
